@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>AI Copywriter</h1>
+<form method="POST">
+    <label>Section to Rewrite:</label><br>
+    <select name="section">
+        <option value="home">Home</option>
+        <option value="about">About</option>
+    </select><br><br>
+
+    <label>Target Job Title:</label><br>
+    <input name="job_title" placeholder="e.g. Data Scientist"><br><br>
+
+    <label>Tone:</label><br>
+    <select name="tone">
+        <option value="professional">Professional</option>
+        <option value="friendly">Friendly</option>
+        <option value="technical">Technical</option>
+        <option value="creative">Creative</option>
+    </select><br><br>
+
+    <input type="submit" value="Generate SEO Copy">
+</form>
+{% endblock %}

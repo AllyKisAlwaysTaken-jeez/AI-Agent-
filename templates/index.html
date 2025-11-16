@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="py-5 text-center bg-primary text-white rounded shadow-sm mb-4">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to My Portfolio</h1>
+        <p class="lead mt-3">{{ home_intro }}</p>
+        <a href="/about" class="btn btn-light btn-lg mt-3">Learn More About Me</a>
+    </div>
+</section>
+
+<!-- Highlighted Skills / Features -->
+<section class="container mb-5">
+    <h2 class="mb-4 text-center">About This Portfolio</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Professional Focus</h5>
+                    <p class="card-text">Write an SEO-optimized home section for a personal portfolio targeting a Data Scientist role.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Skills & Keywords</h5>
+                    <p class="card-text">Include keywords relevant to Data Scientist and make the portfolio professional and easy to navigate.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Projects Overview</h5>
+                    <p class="card-text">Showcase your projects, blog posts, and data visualizations in a structured and clear way.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>AI-Generated Copy</h1>
+
+<div class="bg-white shadow p-4 rounded">
+    <pre style="white-space: pre-wrap;">{{ rewritten_text }}</pre>
+</div>
+
+<a href="/dashboard" class="btn btn-dark mt-4">Back to Dashboard</a>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>AI Portfolio Copywriter</h1>
+
+<div class="p-4 bg-white shadow rounded">
+
+    <form method="POST">
+
+        <label class="form-label">Section</label>
+        <input class="form-control" name="section">
+
+        <label class="form-label mt-3">Job Role</label>
+        <input class="form-control" name="job_role">
+
+        <label class="form-label mt-3">Keywords</label>
+        <input class="form-control" name="keywords">
+
+        <label class="form-label mt-3">Project Info</label>
+        <textarea class="form-control" name="project_info" rows="4"></textarea>
+
+        <button class="btn btn-success w-100 mt-4">Generate</button>
+    </form>
+
+</div>
+
+{% endblock %}

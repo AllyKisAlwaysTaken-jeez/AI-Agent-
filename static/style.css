@@ -1,0 +1,19 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card h5 {
+  font-weight: bold;
+}
+
+.bg-primary {
+  background-color: #0d6efd !important;
+}
