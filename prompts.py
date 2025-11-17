@@ -1,44 +1,7 @@
-from fastapi import FastAPI, Depends, HTTPException
-from sqlalchemy.orm import Session
-from database import SessionLocal, engine
-from models import Base, Style, Prompt
-from schemas import StyleCreate, PromptCreate
-
-# Initialize DB
-Base.metadata.create_all(bind=engine)
-
-app = FastAPI()
-
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-# ---------- CRUD Endpoints ---------- #
-
-@app.post("/styles/")
-def create_style(style: StyleCreate, db: Session = Depends(get_db)):
-    db_style = Style(name=style.name, description=style.description)
-    db.add(db_style)
-    db.commit()
-    db.refresh(db_style)
-    return db_style
-
-@app.get("/styles/")
-def list_styles(db: Session = Depends(get_db)):
-    return db.query(Style).all()
-
-@app.post("/prompts/")
-def create_prompt(prompt: PromptCreate, db: Session = Depends(get_db)):
-    db_prompt = Prompt(text=prompt.text, style_id=prompt.style_id)
-    db.add(db_prompt)
-    db.commit()
-    db.refresh(db_prompt)
-    return db_prompt
-
-@app.get("/prompts/")
-def list_prompts(db: Session = Depends(get_db)):
-    return db.query(Prompt).all()
+def build_home_prompt(section, job_role, keywords, project_info):
+prompt = (
+f"Write SEO-optimized portfolio website text for the '{section}' section "
+f"for someone applying as a {job_role}. Use the following keywords: {keywords}. "
+f"Include these project details if relevant: {project_info}. The tone should be professional and engaging."
+)
+return prompt
