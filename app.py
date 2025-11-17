@@ -3,7 +3,7 @@ prompt = build_home_prompt(body.section, body.job_role, body.keywords, body.proj
 
 
 if not OPENAI_API_KEY:
-flash("No OPENAI_API_KEY set. Please configure it in environment.", "danger")
+  flash("No OPENAI_API_KEY set. Please configure it in environment.", "danger")
 return redirect(url_for("dashboard"))
 
 
